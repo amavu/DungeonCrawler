@@ -28,14 +28,16 @@ let playerPosition = [0,0]
 function movePlayer(newPosition) {
   if (dungeon[newPosition[0]][newPosition[1]] == null) {
     console.log('You crashed into the wall, try again!');
+    console.log('End the game: Ctrl + C');
     getInput();
   } else {
     if ((dungeon[newPosition[0]][newPosition[1]]).type === 'end') {
-      return console.log('Congrats, you made it out of the dungeon!');
+      return console.log('Congrats, you made it out of the dungeon! \n End the game: Ctrl + C');
     }
     console.log('Move player to: ', newPosition);
     playerPosition = newPosition;
     getInput();
+    console.log('End the game: Ctrl + C');
   }
 };
 
